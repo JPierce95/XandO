@@ -55,62 +55,49 @@ int main()
                 cout << board[1][0] << " " << board[1][1] << " " << board[1][2] << " \n";
                 cout << board[2][0] << " " << board[2][1] << " " << board[2][2] << " \n";
 
-                if(board[0][1] == board[0][0] && (board[0][0] == 'X' || board[0][0] == 'O')){
-                        if(board[0][2] == board[0][0]){
+                if((board[0][1] == board[0][0] && board[0][2] == board[0][0]) && (board[0][0] == 'X' || board[0][0] == 'O')){
                                 win = board[0][0];
                                 playing = false;
-                        }
                 }
 
-                else if(board[1][0] == board[0][0] && (board[0][0] == 'X' || board[0][0] == 'O')){
-                        if(board[2][0] == board[0][0]){
+                else if((board[1][0] == board[0][0] && board[2][0] == board[0][0]) && (board[0][0] == 'X' || board[0][0] == 'O')){
                                 win = board[0][0];
                                 playing = false;
-                        }
                 }
 
-                else if(board[1][1] == board[0][0] && (board[0][0] == 'X' || board[0][0] == 'O')){
-                        if(board[2][2] == board[0][0]){
+                else if((board[1][1] == board[0][0] && board[2][2] == board[0][0]) && (board[0][0] == 'X' || board[0][0] == 'O')){
                                 win = board[0][0];
                                 playing = false;
-                        }
                 }
-                else if(board[1][1] == board[1][0] && (board[1][0] == 'X' || board[1][0] == 'O')){
-                        if(board[1][2] == board[1][0]){
-                                win = board[0][0];
+                
+                else if((board[1][1] == board[1][0] && board[1][2] == board[1][0]) && (board[1][0] == 'X' || board[1][0] == 'O')){
+                                win = board[1][0];
                                 playing = false;
-                        }
                 }
 
-                else if(board[2][1] == board[2][0] && (board[2][0] == 'X' || board[2][0] == 'O')){
-                        if(board[2][2] == board[2][0]){
-                                win = board[0][0];
+                else if((board[2][1] == board[2][0] && board[2][2] == board[2][0]) && (board[2][0] == 'X' || board[2][0] == 'O')){
+                                win = board[2][0];
                                 playing = false;
-                        }
                 }
 
-                else if(board[1][1] == board[0][2] && (board[0][2] == 'X' || board[0][2] == 'O')){
-                        if(board[2][0] == board[0][2]){
-                                win = board[0][0];
+                else if((board[1][1] == board[0][2] && board[2][0] == board[0][2]) && (board[0][2] == 'X' || board[0][2] == 'O')){
+                                win = board[0][2];
                                 playing = false;
-                        }
                 }
-                else if(board[1][1] == board[0][1] && (board[0][1] == 'X' || board[0][1] == 'O')){
-                        if(board[2][1] == board[0][1]){
-                                win = board[0][0];
+                else if((board[1][1] == board[0][1] && board[2][1] == board[0][1]) && (board[0][1] == 'X' || board[0][1] == 'O')){
+                                win = board[0][1];
                                 playing = false;
-                        }
                 }
 
-                else if(board[1][2] == board[0][2] && (board[0][2] == 'X' || board[0][2] == 'O')){
-                        if(board[2][2] == board[0][2]){
-                                win = board[0][0];
+                else if((board[1][2] == board[0][2] && board[2][2] == board[0][2]) && (board[0][2] == 'X' || board[0][2] == 'O')){
+                                win = board[0][2];
                                 playing = false;
-                        }
                 }
 
         }while( playing );
-
+		if(win == 'X' || win == 'O'){
+			cout << "Winner is " << win << endl;
+		}
         cout<<"Goodbye!\n";
 
         return 0;
